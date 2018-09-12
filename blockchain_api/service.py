@@ -3,8 +3,6 @@ from blockchain_api.blockchain import Blockchain
 from flask import jsonify, request
 from uuid import uuid4
 
-from textwrap import dedent
-
 node_id = str(uuid4()).replace('-', '')
 
 blockchain = Blockchain()
@@ -16,7 +14,7 @@ def mine():
     # Run PoW algorithm to find next proof
     last_block = blockchain.pop_block
     last_proof = last_block['proof']
-    proof = blockchain.proof_of_work(last_proof)
+    proof = blockchain.hashcash(last_proof)
 
     # Receive reward for finding proof (sender=0)
     blockchain.new_transaction(
