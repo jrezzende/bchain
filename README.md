@@ -37,7 +37,7 @@ $ python runserver.py
   }
   
   After that, you can mine new blocks on your added node and verify its authoritativeness by making a GET request to
-  http://localhost:<port>/nodes/resolve which will resolve the current state of the chain by replacing it if a valid chain is found,
+  http://localhost:<port>/nodes/resolve -  which will resolve the current state of the chain by replacing it if a valid chain is found,
   whose length is greaters than ours.
   
   
